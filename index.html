@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Quest Club is a friendly, pick-your-own-adventure game for young explorers."
+    />
+    <title>Quest Club: Big Little Adventures</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#game">Skip to game</a>
+    <main id="game" class="shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Quest Club home">
+          <span class="brand-mark" aria-hidden="true">QC</span>
+          <span>QUEST CLUB</span>
+        </a>
+        <div class="topbar-actions">
+          <button id="sound-button" class="icon-button" type="button" aria-pressed="false">
+            <span aria-hidden="true">♪</span><span class="button-label">Sound off</span>
+          </button>
+          <button id="restart-button" class="icon-button" type="button">
+            <span aria-hidden="true">↺</span><span class="button-label">New quest</span>
+          </button>
+        </div>
+      </header>
+
+      <section id="start-screen" class="start-screen" aria-labelledby="welcome-title">
+        <div class="hero-badge">A BIG LITTLE ADVENTURE</div>
+        <h1 id="welcome-title">Where will you explore?</h1>
+        <p class="intro">Pick a mission. Be kind, be clever, and collect helpful things!</p>
+        <div id="theme-picker" class="theme-picker" aria-label="Choose your adventure"></div>
+        <p class="tiny-note">You can always start over or choose a different path.</p>
+      </section>
+
+      <section id="play-screen" class="play-screen" hidden aria-live="polite">
+        <div class="quest-header">
+          <div>
+            <p id="theme-name" class="eyebrow"></p>
+            <h1 id="scene-title" tabindex="-1"></h1>
+          </div>
+          <div class="progress-wrap">
+            <span id="progress-label">Quest progress</span>
+            <div class="progress-track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="progress-bar" class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-grid">
+          <div id="scene-art" class="scene-art" role="img" aria-label=""></div>
+          <article class="story-card">
+            <p id="scene-text" class="story-text"></p>
+            <div id="choices" class="choices" aria-label="What will you do?"></div>
+          </article>
+        </div>
+
+        <aside class="backpack" aria-labelledby="backpack-title">
+          <div class="backpack-heading">
+            <span class="backpack-icon" aria-hidden="true">▣</span>
+            <h2 id="backpack-title">Explorer backpack</h2>
+          </div>
+          <p id="backpack-empty" class="backpack-empty">Your backpack is ready for treasures.</p>
+          <ul id="inventory" class="inventory" aria-live="polite"></ul>
+        </aside>
+      </section>
+    </main>
+    <footer>Made for brave, bright explorers. No scary surprises.</footer>
+    <script src="game.js"></script>
+  </body>
+</html>
